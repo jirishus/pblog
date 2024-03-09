@@ -1,20 +1,24 @@
-name: pblog deployment pipeline
+name: Deploy to pblog droplet
+
 on:
   push:
-    branches: [master, develop]
+    branches:
+      - main
+      - develop
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy pblog static html
-        uses: appleboy/ssh-action@1.0.3
-        env:
-          host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
-          username: ${{secrets.SSH_USERNAME}}
-        with:
-          scripts: |
-            touch someFile.txt
-            echo "The pipeline execution is complete"
+    - name: Checkout code
+      uses: actions/checkout@v2
 
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Deploy code to Droplet
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} sammy@144.126.223.245 'touch doStuffBro.txt'

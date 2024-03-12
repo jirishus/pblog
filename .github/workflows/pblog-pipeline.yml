@@ -1,0 +1,15 @@
+name: Deploy to pblog droplet
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    - name: Deploy code to Droplet
+      run: |
+        echo 'all done here'

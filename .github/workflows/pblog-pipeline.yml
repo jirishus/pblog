@@ -10,16 +10,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        known_hosts: "/Users/brandongagon/.ssh"
-
     - name: Deploy code to Droplet
       run: |
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} sammy@144.126.223.245 'touch doStuffBro.txt'
+        echo 'all done here'

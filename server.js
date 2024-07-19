@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/api/data', (req, res) => {
+    console.log('Processing GET Request');
     res.json({ message: 'Hello from Express!' });
 });
 

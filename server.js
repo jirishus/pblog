@@ -12,5 +12,6 @@ app.get('/api/data', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    const host = 'http://localhost';
+    console.log(`Server is running on ${host}:${port}`);
 });

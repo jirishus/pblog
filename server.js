@@ -20,6 +20,6 @@ app.get('/page', (req, res) => {
 });
 
 app.listen(port, () => {
-    const host = 'http://localhost';
+    const host = '::'; // Listen on all network interfaces, both IPv4 and IPv6
     console.log(`Server is running on ${host}:${port}`);
 });

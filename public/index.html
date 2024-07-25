@@ -6,13 +6,14 @@
     <title>Call Express Endpoint</title>
 </head>
 <body>
-    <button id="fetch-data">Fetch Data</button>
+    <h1>Main TEST PAGE</h1>
+    <button id="fetch-data">Fetch Data Updated</button>
     <div id="response"></div>
 
     <script>
         let button = document.getElementById('fetch-data');
         button.addEventListener('click', () => {
-            fetch('http://localhost:3000/api/data')
+            fetch('http://www.brandongagon.com/api/data')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Data Successfully Fetched');

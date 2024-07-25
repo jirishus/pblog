@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const host = '127.0.0.1';
 const port = 3000;
 const fs = require('fs');
 
@@ -19,7 +20,6 @@ app.get('/page', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    const host = '::'; // Listen on all network interfaces, both IPv4 and IPv6
+app.listen(port, host, () => {
     console.log(`Server is running on ${host}:${port}`);
 });

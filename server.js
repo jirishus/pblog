@@ -13,13 +13,6 @@ app.get('/api/data', (req, res) => {
     res.json({ message: 'Hello from Express!' });
 });
 
-app.get('/page', (req, res) => {
-    fs.readFile(__dirname + '/public/index.html', 'utf8', (err, text) => {
-        if (err) console.log(err);
-        res.send(text);
-    });
-});
-
 app.listen(port, host, () => {
     console.log(`Server is running on ${host}:${port}`);
 });

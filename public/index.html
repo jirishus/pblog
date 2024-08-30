@@ -13,7 +13,7 @@
     <script>
         let button = document.getElementById('fetch-data');
         button.addEventListener('click', () => {
-            fetch('https://www.brandongagon.com/api/data')
+            fetch('https://www.brandongagon.com/api/data/')
                 .then(response => response.json())
                 .then(data => {
                     console.log('Data Successfully Fetched');
